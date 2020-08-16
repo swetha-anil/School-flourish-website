@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>5th grade and 8th grade</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style type="text/css">
+	body{
+	background-image: url('images/teaching3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+	}
+
+	.details-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.7);
+}
+	form {
+	margin: 0.05px auto;
+	width: 600px;
+	border-radius: 10px;
+	font-family: Arial ,Helvetica ,sans-serif;
+
+    }
+    .details-container h2{
+    	color:#70002e;
+    	text-align: center;
+    	font-size: 45px;
+    	font-family:'Poppins'. sans-serif;
+    	letter-spacing: 2px;
+    	
+    }
+    .details-upload {
+    width: 100%;
+    height: 100%;
+    margin: 10px auto;
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    padding: 35px;
+    }
+    .faculty-details label {
+    padding-left: 60px;
+	padding-right: 35px;
+	display: inline-block;
+	width: 120px;
+	text-align: right;
+	color: black;
+	font-size: 16px;
+	font-weight: bold;
+    }
+    .faculty-details input {
+	margin-bottom: 2.5%;
+	height: 20px;
+	font-size: 15px;
+	font-family: Arial ,Helvetica ,sans-serif;
+	background: rgba(189,189,189,0.3);
+	width :230px;
+	vertical-align: top;
+}
+    .upload-heading h3 {
+    	text-align: left;
+    	font-size: 20px;
+    	color: #bd0000;
+    }
+    input[type=button] {
+    background: #a97500;
+	position: relative;
+    height: 35px;
+    width: 120px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+    color: white;
+	font-family: Arial ,Helvetica ,sans-serif;
+    text-decoration: none;
+    font-size: 15px;
+
+    }
+    input[type=button]:hover {
+    	background: -webkit-linear-gradient(bottom, #b94310, #7d0000);
+    }
+    .upload-video-content{
+    	padding-top: 20px;
+    }
+    .upload-area{
+    	padding-left: 50px;
+    }
+    .submit-contents input{
+    	background: #70002e;
+    	text-align: center;
+    }
+    .submit-contents input:hover {
+    	background: -webkit-linear-gradient(bottom, #922504, #12005a);
+    }
+</style>
+
+
+<body>
+	
+	<div class="details-container">
+		<h2>Please Fill The Below Details</h2>
+		<form action="/my-handling_form_page" method="post">
+			<div class="details-upload">
+				<div class="details">
+					<div class="faculty-details">
+						<div>
+							<label for="name">Faculty Name :</label>
+							<input type="text" id="name" name="username">
+						</div>
+						<div>
+							<label for="subject">Subject :</label>
+							<input type="text" id="subject" name="subject">
+						</div>
+						<div>
+							<label for="class">Class :</label>
+							<input type="text" id="class" name="class">
+						</div>
+					</div>
+				</div>
+				<div class="upload-heading">			
+					<h3>Upload</h3>
+				</div>
+				<div class="upload-note-content">
+					<input type="button" value="Notes" id="notes" onclick="myfunction(this)">
+					    <div id="notes-upload" style="display: none;">
+						    <label class="upload-area">Choose pdf notes  
+								<input class="file-upload-input" type="file" multiple="multiple" accept="">
+							</label><br>
+						</div>
+				</div>	
+				<div class="upload-video-content">
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>	
+					<input type="button" value="Video" id="video" onclick="toggle(this)">
+						<div id="video-upload" style="display: none;">
+							<label class="upload-area">Choose video
+								<input type="file" name="file[]" class="file_multi_video" accept="video/*">
+									<script type="text/javascript">
+								        $(document).on("change", ".file_multi_video", function(evt) {
+										  var $source = $('#video_here');
+										  $source[0].src = URL.createObjectURL(this.files[0]);
+										  $source.parent()[0].load();
+										});
+								    </script>
+							</label>                           
+						</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<center>
+		<div class="submit-contents">
+			<input type="button" id="subbutton" value="Submit">
+			<script>
+			  subbutton.onclick = function() {
+			    alert('Submitted Successfully!');
+			  };
+			</script>
+		</div>
+	</center>
+</body>
+<script>
+    function myfunction(ele) {
+        var cont = document.getElementById('notes-upload');
+        if (cont.style.display == 'block') {
+            cont.style.display = 'none';
+
+            document.getElementById(ele.id).value = 'Notes';
+        }
+        else {
+            cont.style.display = 'block';
+            document.getElementById(ele.id).value = 'Notes';
+        }
+    }
+    function toggle(element) {
+        var cons = document.getElementById('video-upload');
+        if (cons.style.display == 'block') {
+            cons.style.display = 'none';
+
+            document.getElementById(element.id).value = 'Video';
+        }
+        else {
+            cons.style.display = 'block';
+            document.getElementById(element.id).value = 'Video';
+        }
+    }
+    
+</script>
+</html>

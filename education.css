@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins'. sans-serif;
+}
+
+.container-login100 {
+	min-height: 400px;
+    height: calc(100vh);
+    background-image: url('bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    line-height: 1.4;
+}
+.welcome{
+    padding-top: 2em;
+}
+.welcome h1 {
+	text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    font-family:'Poppins'. sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 55px;
+    padding: 30px;
+    letter-spacing: 10px;
+}
+.welcome h1 span{
+	color: #ff5400;
+
+}
+.box {
+    width: 29%;
+    min-height: 40vh;
+    margin: 10px auto;
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    padding: 50px;
+}
+.box h3{
+	font-family: Arial ,Helvetica ,sans-serif;
+	text-align: center;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 1em;
+}
+.button {
+	margin-top: 40px;
+}
+button {
+	background: #cc4139;
+
+	position: relative;
+    height: 40px;
+    width: 140px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover {
+	background: -webkit-linear-gradient(bottom, #b94310, #7d0000);
+}
+.button a:hover {
+	color: white;
+}
+
+.button a{
+	color: white;
+	font-family: Arial ,Helvetica ,sans-serif;
+	text-decoration: none;
+}
+
